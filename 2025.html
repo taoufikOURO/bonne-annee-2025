@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonne Année 2025!</title>
+    <!-- Inclusion de Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Polices Google Fonts stylisées -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&family=Racing+Sans+One&family=Russo+One&display=swap" rel="stylesheet">
+    
+    <!-- Configuration personnalisée de Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    /* Définition d'animations personnalisées avec des durées spécifiques */
+                    animation: {
+                        'bounce-slow': 'bounce 3s linear infinite', // Rebond lent
+                        'ping-slow': 'ping 2s linear infinite',     // Effet "ping" lent
+                        'pulse-slow': 'pulse 3s linear infinite',   // Pulsation lente
+                        'spin-slow': 'spin 3s linear infinite',     // Rotation lente
+                        'float': 'float 6s ease-in-out infinite',   // Flottement personnalisé
+                        'sparkle': 'sparkle 2s ease-in-out infinite', // Scintillement
+                    },
+                    /* Définition des polices personnalisées */
+                    fontFamily: {
+                        'orbitron': ['Orbitron', 'sans-serif'],
+                        'racing': ['Racing Sans One', 'cursive'],
+                        'russo': ['Russo One', 'sans-serif'],
+                    },
+                    /* Définition des keyframes pour les animations personnalisées */
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        sparkle: {
+                            '0%, 100%': { opacity: 1, transform: 'scale(1)' },
+                            '50%': { opacity: 0.5, transform: 'scale(1.2)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<!-- Corps de la page avec un dégradé de fond complexe -->
+<body class="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-black overflow-hidden flex items-center justify-center">
+    <!-- Effet de neige/étoiles en arrière-plan (génération via JavaScript) -->
+    <div id="snowfall" class="fixed inset-0 pointer-events-none"></div>
+
+    <!-- Conteneur principal avec effet glassmorphism -->
+    <div class="relative backdrop-blur-sm bg-white/10 p-8 rounded-3xl shadow-2xl border border-white/20 
+                transform hover:scale-105 transition-all duration-500 max-w-4xl w-full mx-4">
+        
+        <!-- Section du titre principal (2025) -->
+        <h1 class="font-orbitron text-8xl md:text-9xl mb-8 text-transparent bg-clip-text 
+                   bg-gradient-to-r from-pink-500 via-yellow-500 to-pink-500 
+                   animate-pulse-slow text-center hover:scale-110 
+                   transition-transform duration-300 cursor-pointer 
+                   drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]">
+            2025
+        </h1>
+
+        <!-- Sous-titre "Bonne Année" -->
+        <div class="text-center mb-12">
+            <h2 class="font-racing text-6xl md:text-7xl text-transparent 
+                       bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400 
+                       hover:from-blue-400 hover:to-cyan-400 transition-all duration-300
+                       drop-shadow-[0_0_10px_rgba(56,189,248,0.5)]">
+                BONNE ANNÉE
+            </h2>
+        </div>
+
+        <!-- Section des messages de vœux -->
+        <div class="space-y-8 text-center mb-12">
+            <!-- Introduction aux vœux -->
+            <p class="text-3xl font-russo text-transparent bg-clip-text 
+                      bg-gradient-to-r from-purple-400 via-pink-400 to-red-400 
+                      animate-pulse drop-shadow-[0_0_8px_rgba(219,39,119,0.5)]">
+                Que cette année soit
+            </p>
+            
+            <!-- Conteneur des badges de vœux -->
+            <div class="flex flex-wrap justify-center gap-4">
+                <!-- Badge "Magique" avec animation de flottement -->
+                <span class="bg-gradient-to-r from-green-400 to-emerald-500 
+                            text-white px-6 py-2 rounded-full animate-float 
+                            shadow-lg hover:shadow-green-500/50 transition-shadow
+                            text-lg font-bold">
+                    Magique ✨
+                </span>
+                
+                <!-- Badge "Brillante" avec effet de pulsation -->
+                <span class="bg-gradient-to-r from-purple-400 to-indigo-500 
+                            text-white px-6 py-2 rounded-full animate-pulse-slow 
+                            shadow-lg hover:shadow-purple-500/50 transition-shadow
+                            text-lg font-bold">
+                    Brillante 💫
+                </span>
+                
+                <!-- Badge "Heureuse" avec animation de rebond -->
+                <span class="bg-gradient-to-r from-pink-400 to-rose-500 
+                            text-white px-6 py-2 rounded-full animate-bounce-slow 
+                            shadow-lg hover:shadow-pink-500/50 transition-shadow
+                            text-lg font-bold">
+                    Heureuse 🌟
+                </span>
+            </div>
+        </div>
+
+        <!-- Section du bouton de célébration -->
+        <div class="text-center">
+            <button onclick="celebrate()" 
+                    class="group relative px-8 py-4 bg-gradient-to-r 
+                           from-violet-600 to-indigo-600 text-white text-xl 
+                           rounded-full overflow-hidden transition-all duration-300 
+                           hover:scale-105 hover:shadow-lg hover:shadow-indigo-500/50">
+                <span class="relative z-10 font-bold group-hover:animate-pulse">
+                    CÉLÉBRER ! 🎉
+                </span>
+                <!-- Overlay du bouton pour l'effet de survol -->
+                <div class="absolute inset-0 bg-gradient-to-r 
+                            from-violet-400 to-fuchsia-500 opacity-0 
+                            group-hover:opacity-100 transition-opacity duration-300">
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <!-- Éléments décoratifs d'arrière-plan -->
+    <div class="fixed top-0 left-0 w-full h-full pointer-events-none">
+        <!-- Grands cercles lumineux -->
+        <div class="absolute top-1/4 left-1/4 w-6 h-6 
+                    bg-blue-500/50 rounded-full animate-ping-slow 
+                    blur-sm"></div>
+        <div class="absolute top-3/4 right-1/4 w-6 h-6 
+                    bg-purple-500/50 rounded-full animate-ping-slow 
+                    blur-sm"></div>
+        <div class="absolute bottom-1/4 left-1/2 w-6 h-6 
+                    bg-pink-500/50 rounded-full animate-ping-slow 
+                    blur-sm"></div>
+        
+        <!-- Petites étoiles scintillantes -->
+        <div class="absolute top-1/3 right-1/3 w-3 h-3 
+                    bg-yellow-400/70 rounded-full animate-sparkle"></div>
+        <div class="absolute top-2/3 left-1/3 w-3 h-3 
+                    bg-yellow-400/70 rounded-full animate-sparkle"></div>
+        <div class="absolute bottom-1/3 right-1/2 w-3 h-3 
+                    bg-yellow-400/70 rounded-full animate-sparkle"></div>
+    </div>
+</body>
+</html>
